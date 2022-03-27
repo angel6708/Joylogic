@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="BlackBrush">#383b40</SolidColorBrush>
+    <SolidColorBrush x:Key="LoginBrush">#bbbdbf</SolidColorBrush>
+    <sys:Double x:Key="LoginTextBoxFontSize">18</sys:Double>
+
+    <sys:Double x:Key="TableContentFontSize">18</sys:Double>
+    <sys:Double x:Key="TableHeaderFontSize">16</sys:Double>
+    <sys:Double x:Key="TableHeaderHeight">40</sys:Double>
+    <SolidColorBrush x:Key="AlternateColor0">#FFFFFF</SolidColorBrush>
+    <SolidColorBrush x:Key="AlternateColor1">#80dbdcdc</SolidColorBrush>
+    <SolidColorBrush x:Key="SelectedForground">#FFFFFF</SolidColorBrush>
+    <SolidColorBrush x:Key="SelectedBackground">#1a9239</SolidColorBrush>
+    <SolidColorBrush x:Key="ListboxBottomBrush">#8fCCCEDB</SolidColorBrush>
+
+
+
+    <sys:Double x:Key="FilterPanelLabelFontSize">16</sys:Double>
+    <sys:Double x:Key="FilterPanelInputFontSize">16</sys:Double>
+    <sys:Double x:Key="TextBoxHeight">40</sys:Double>
+    <SolidColorBrush x:Key="TextBoxHintForground">#bcbdbf</SolidColorBrush>
+    <SolidColorBrush x:Key="TextBoxForground">#B2C8C9CA</SolidColorBrush>
+    <SolidColorBrush x:Key="LabelForground">#B2C8C9CA</SolidColorBrush>
+    <SolidColorBrush x:Key="TextBrush">#bbbdbf</SolidColorBrush>
+
+
+    <sys:Double x:Key="HeaderNameFontSize">24</sys:Double>
+    <sys:Double x:Key="HeaderSearchFontSize">24</sys:Double>
+    <SolidColorBrush x:Key="HeaderViewBackground">#B2C8C9CA</SolidColorBrush>
+
+
+    <sys:Double x:Key="ToolButtonFontSize">19</sys:Double>
+    <SolidColorBrush x:Key="ToolButtonForground">#FFFFFF</SolidColorBrush>
+    <SolidColorBrush x:Key="ToolButtonBackground">#B2C8C9CA</SolidColorBrush>
+    <SolidColorBrush x:Key="ToolButtonPressedBackground">#1a9239</SolidColorBrush>
+    <SolidColorBrush x:Key="ToolViewBackground">#B2C8C9CA</SolidColorBrush>
+   
+
+
+</ResourceDictionary>

@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{142B4AE5-F28F-4DC7-9E4E-4329F8BFE877}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Resources</RootNamespace>
+    <AssemblyName>Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="usercontrol\HintComboBox.cs" />
+    <Compile Include="usercontrol\HintTextBox.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\AD-PC_10.png" />
+    <Resource Include="images\AD-PC_100.png" />
+    <Resource Include="images\AD-PC_12.png" />
+    <Resource Include="images\AD-PC_14.png" />
+    <Resource Include="images\AD-PC_16.png" />
+    <Resource Include="images\AD-PC_26.png" />
+    <Resource Include="images\AD-PC_29.png" />
+    <Resource Include="images\AD-PC_32.png" />
+    <Resource Include="images\AD-PC_50.png" />
+    <Resource Include="images\AD-PC_55.png" />
+    <Resource Include="images\AD-PC_60.png" />
+    <Resource Include="images\AD-PC_75.png" />
+    <Resource Include="images\AD-PC_86.png" />
+    <Resource Include="images\AD-PC_88.png" />
+    <Resource Include="images\AD-PC_91.png" />
+    <Resource Include="images\AD-PC_94.png" />
+    <Resource Include="images\AD-PC_96.png" />
+    <Resource Include="images\AD-PC_98.png" />
+    <Resource Include="images\AD-PC_login_03.png" />
+    <Resource Include="images\AD-PC_login_06.png" />
+    <Resource Include="images\AD-PC_login_12.png" />
+    <Resource Include="images\AD-PC_login_15.png" />
+    <Resource Include="images\AD-PC_login_17.png" />
+    <Resource Include="images\AD-PC_login_20.png" />
+    <Resource Include="images\cfqy.png" />
+    <Resource Include="images\cfqyl.png" />
+    <Resource Include="images\fdj.png" />
+    <Resource Include="images\fx.png" />
+    <Resource Include="images\h.png" />
+    <Resource Include="images\menubtn.png" />
+    <Resource Include="images\qy.png" />
+    <Resource Include="images\qyl.png" />
+    <Resource Include="images\user.png" />
+    <Resource Include="images\xiantiao.png" />
+    <Resource Include="images\xiaotiao.png" />
+    <Resource Include="images\zoom_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\AD-PC_147.png" />
+    <Resource Include="images\AD-PC_149.png" />
+    <Resource Include="images\AD-PC_23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="styles\ComboBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="styles\Common.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="styles\DataGridStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="styles\ListViewStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="styles\PasswordStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="styles\UserNameStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\1_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\AD-PC_103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\close_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\arrow_03.png" />
+    <Resource Include="images\arrow_06.png" />
+    <Resource Include="images\pre-next_07.png" />
+    <Resource Include="images\pre-next_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\arr_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\arrow_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\AD-PC_53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\loding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\loading_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\calendar_03.png" />
+    <Resource Include="images\calendar_05.png" />
+    <Resource Include="images\calendar_07.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
