@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="Joylogic.Views.MessageView"
+             xmlns:uiConsts="clr-namespace:Core.Infrastructure.Consts;assembly=Core.Infrastructure"
+             xmlns:baseView="clr-namespace:Core.Infrastructure.Controls;assembly=Core.Infrastructure"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600">
+    <UserControl.Resources>
+
+    </UserControl.Resources>
+
+
+    <Grid Background="#02010101">
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="218"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition> 
+            <ColumnDefinition Width="2"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid  Background="{Binding MessageColor}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"  Height="218"  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Foreground="White" Margin="10,0" VerticalAlignment="Center" Grid.ColumnSpan="4" Grid.Row="1" Text="{Binding Message}" TextWrapping="Wrap" FontSize="18" TextAlignment="Left" ></TextBlock>
+
+            <Border HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="40" Grid.Row="2"  Grid.Column="2" BorderBrush="#b0b1b3" BorderThickness="1" >
+                <Button Name="closebtn" Command="{Binding CancelCommand}" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid Background="#01FFFFFF">
+
+                                <TextBlock Foreground="White" Text="取消" TextAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+            <Border HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="40"  Grid.Row="2"  Grid.Column="1" BorderBrush="#b0b1b3" BorderThickness="1" >
+                <Button Name="confirmbtn"  Command="{Binding OKCommand }" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid Background="#01FFFFFF">
+                                <TextBlock Foreground="White" Text="确定" TextAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+
+        </Grid>
+
+  
+    </Grid>
+ 
+</UserControl>

@@ -1,0 +1,35 @@
+﻿<baseView:BaseView  x:Class="TestModule.LeeView"
+              xmlns:baseView="clr-namespace:Core.Infrastructure.Controls;assembly=Core.Infrastructure"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:controls="clr-namespace:Core.Infrastructure.Controls;assembly=Core.Infrastructure"
+            xmlns:uiConsts="clr-namespace:Core.Infrastructure.Consts;assembly=Core.Infrastructure"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:Resources.usercontrol;assembly=Resources"
+             xmlns:local="clr-namespace:TestModule" 
+             mc:Ignorable="d" 
+                    xmlns:workflow="clr-namespace:Core.Infrastructure.Workflow;assembly=Core.Infrastructure"
+             d:DesignHeight="800" d:DesignWidth="1440">
+
+    <baseView:BaseView.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+    </baseView:BaseView.Resources>
+
+    <Grid>
+        <TextBlock FontSize="30">LeeView!</TextBlock>
+
+        <StackPanel Visibility="{Binding IsInProcess, Converter={StaticResource BooleanToVisibilityConverter}}"  DataContext="{x:Static workflow:ForeachInfoStack.Instance}" Margin="30" >
+            <TextBlock FontSize="30">
+            <Run>Here is ForeachStackInfo,you can use it anywhere:</Run>
+            </TextBlock>
+            <TextBlock  FontSize="30">
+                <Run> Total:</Run><Run Text="{Binding CurrentForeachInfo.TotalCount, Mode=OneWay}"></Run>
+                <Run> ，Current:</Run><Run Text="{Binding CurrentForeachInfo.CurrentCount , Mode=OneWay}"></Run>
+                <Run>，CurrentItem:</Run><Run Text="{Binding CurrentForeachInfo.CurrentItem, Mode=OneWay}"></Run>
+                <Run>，NextItem:</Run><Run Text="{Binding CurrentForeachInfo.NextItem, Mode=OneWay}"></Run>
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</baseView:BaseView>

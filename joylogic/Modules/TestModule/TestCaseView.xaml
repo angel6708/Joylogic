@@ -1,0 +1,24 @@
+﻿<baseView:BaseView  x:Class="TestModule.TestCaseView"
+              xmlns:baseView="clr-namespace:Core.Infrastructure.Controls;assembly=Core.Infrastructure"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:controls="clr-namespace:Core.Infrastructure.Controls;assembly=Core.Infrastructure"
+            xmlns:uiConsts="clr-namespace:Core.Infrastructure.Consts;assembly=Core.Infrastructure"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:Resources.usercontrol;assembly=Resources"
+             xmlns:local="clr-namespace:TestModule" 
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1440">
+
+    <baseView:BaseView.Resources>
+    
+        
+    </baseView:BaseView.Resources>
+ 
+    <Grid>
+        <TextBlock VerticalAlignment="Center" FontSize="30">TestCaseView!</TextBlock>
+        
+    </Grid>
+</baseView:BaseView>

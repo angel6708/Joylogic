@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2968FB9-CDF0-4C27-82FA-0B38C82B635A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestModule</RootNamespace>
+    <AssemblyName>TestModule</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=5.11.6.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.Abstractions.5.11.6\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.10.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.Container.5.11.10\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SelectCaseViewModel.cs" />
+    <Compile Include="SelectCaseView.xaml.cs">
+      <DependentUpon>SelectCaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkFlow\TestCaseSession4View.cs" />
+    <Compile Include="LeeView.xaml.cs">
+      <DependentUpon>LeeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DogView.xaml.cs">
+      <DependentUpon>DogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BarView.xaml.cs">
+      <DependentUpon>BarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LeeViewModel.cs" />
+    <Compile Include="DogViewModel.cs" />
+    <Compile Include="BarViewModel.cs" />
+    <Compile Include="WorkFlow\TestCaseSession.cs" />
+    <Compile Include="TestModule.cs" />
+    <Compile Include="FooView.xaml.cs">
+      <DependentUpon>FooView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkFlow\TestCondition.cs" />
+    <Compile Include="WorkFlow\TestContext.cs" />
+    <Compile Include="WorkFlow\TestForeachSession.cs" />
+    <Compile Include="WorkFlow\TestSaveServiceReutnFalse.cs" />
+    <Compile Include="WorkFlow\TestSaveService.cs" />
+    <Compile Include="TestCaseView.xaml.cs">
+      <DependentUpon>TestCaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FooViewModel.cs" />
+    <Compile Include="TestCaseViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Data.Access.Interface\Data.Access.Interface.csproj">
+      <Project>{7e1d4a18-758a-43ec-aa28-badf79d1c004}</Project>
+      <Name>Data.Access.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Data.Access\Data.Access.csproj">
+      <Project>{83513efc-63ce-4839-bdf3-108a17be9ec5}</Project>
+      <Name>Data.Access</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Data.Models\Data.Models.csproj">
+      <Project>{81afd730-8109-4dfa-955f-f0693c2b2a01}</Project>
+      <Name>Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Infrastructure\Infrastructure.csproj">
+      <Project>{91c31097-68c8-4521-b437-375734aa6628}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Resources\Resources.csproj">
+      <Project>{142b4ae5-f28f-4dc7-9e4e-4329f8bfe877}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Exts\Prism\Prism.Core\Prism.Core.csproj">
+      <Project>{048c6382-60e0-4f20-bbbd-b1bd5781d65a}</Project>
+      <Name>Prism.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Exts\Prism\Wpf\Prism.Unity.Wpf\Prism.Unity.Wpf.csproj">
+      <Project>{c617bf8d-c23c-445f-91f3-c4d5700387cb}</Project>
+      <Name>Prism.Unity.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Exts\Prism\Wpf\Prism.Wpf\Prism.Wpf.csproj">
+      <Project>{c996c42b-2d36-4350-9300-0233bccba119}</Project>
+      <Name>Prism.Wpf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SelectCaseView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LeeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FooView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TestCaseView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(TargetDir)$(TargetName)$(TargetExt) $(SolutionDir)Joylogic\$(OutDir)Modules\ /Y
+xcopy $(TargetDir)$(TargetName).pdb $(SolutionDir)Joylogic\$(OutDir)Modules\ /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

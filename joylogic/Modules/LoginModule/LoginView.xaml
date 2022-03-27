@@ -1,0 +1,66 @@
+﻿<baseView:BaseView  x:Class="LoginModule.LoginView"
+              xmlns:baseView="clr-namespace:Core.Infrastructure.Controls;assembly=Core.Infrastructure"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:controls="clr-namespace:Core.Infrastructure.Controls;assembly=Core.Infrastructure"
+            xmlns:uiConsts="clr-namespace:Core.Infrastructure.Consts;assembly=Core.Infrastructure"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:Resources.usercontrol;assembly=Resources"
+             xmlns:local="clr-namespace:LoginModule" 
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1440">
+
+    <baseView:BaseView.Resources>
+    <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Resources;component/styles/UserNameStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Resources;component/styles/PasswordStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+    </baseView:BaseView.Resources>
+ 
+    <Grid   Height="768" Width="1366">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="713"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Width="500"  Height="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+                <my:HintTextBox FontSize="{StaticResource LoginTextBoxFontSize}" AcceptsReturn="False" Hint="{Binding ErrorMessage}" MaxLength="{Binding UserNameMaxLength}"   Grid.Row="1"  Width="369"  
+                                
+                                Text="{Binding UserId, UpdateSourceTrigger=PropertyChanged}"></my:HintTextBox>
+                <!--controls:KeyboardControl.KeyboardControl="True"
+                              controls:KeyboardControl.KeyboardHorizontalAlignment="Center"
+                              controls:KeyboardControl.KeyboardVerticalAlignment="Bottom"-->
+                <PasswordBox Name="pwd" FontSize="{StaticResource LoginTextBoxFontSize}"  PasswordChanged="pwd_PasswordChanged" local:PasswordBoxAssistant.BindPassword="True" 
+                        
+                        local:PasswordBoxAssistant.BoundPassword="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxLength="{Binding PasswordMaxLength}"   Grid.Row="2"></PasswordBox>
+                <StackPanel VerticalAlignment="Center" Grid.Row="0">
+                    <TextBlock HorizontalAlignment="Center" Text="Joylogic Sys" FontSize="36"    Foreground="#939498" FontWeight="Normal" FontFamily="Nirmala UI" />
+                </StackPanel>
+                <Button Grid.Row="3" Width="256"   IsDefault="True"   Height="60" Foreground="#ffffff"  Command="{Binding LoginCommand}"   >
+                    <Button.Template>
+                        <ControlTemplate  TargetType="Button">
+                            <Border Background="#209544" CornerRadius="30"  BorderThickness="0" >
+                                <TextBlock Text="登录"  FontSize="20" VerticalAlignment="Center"  HorizontalAlignment="Center"></TextBlock>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </StackPanel>
+       
+    </Grid>
+</baseView:BaseView>
