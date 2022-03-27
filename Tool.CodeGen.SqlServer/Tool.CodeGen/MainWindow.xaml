@@ -1,0 +1,78 @@
+﻿<Window x:Class="Tool.CodeGen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="1080" Loaded="Window_Loaded">
+    <Grid Margin="0,1,0,-1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"></RowDefinition>
+            <RowDefinition  Height="28"></RowDefinition>
+            <RowDefinition  Height="28"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition  Height="28"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"></ColumnDefinition>
+            <ColumnDefinition Width="700"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Content="Schemas:" HorizontalAlignment="Left"  VerticalAlignment="Bottom"/>
+        <ComboBox Grid.Row="1" Name="cbSchema" HorizontalAlignment="Left" SelectedItem="{Binding SelectedSchema}" ItemsSource="{Binding DataContext.Schemas}"  VerticalAlignment="Top" Width="150"  SelectionChanged="cbSchema_SelectionChanged" />
+      
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <CheckBox HorizontalAlignment="Center" Height="20" IsChecked="{Binding IsSelectAll}"> 全选 </CheckBox>
+            </StackPanel>
+        <ListView    Grid.Row="1" Name="vwTab" SelectedItem="{Binding SelectedTab}" ItemsSource="{Binding SelectedSchema.Tables}" HorizontalAlignment="Left"    VerticalAlignment="Top" Width="180" SelectionChanged="vwTab_SelectionChanged">
+                
+                    <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="25" Header="" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border>
+                                        <CheckBox  IsChecked ="{Binding Path=Selected}"></CheckBox>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="250" Header="Name" DisplayMemberBinding="{Binding Path=Name}"  ></GridViewColumn>
+
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+ 
+            </ListView>
+        </Grid>
+        <Label Grid.Row="2" Content="Tables:" HorizontalAlignment="Left"  VerticalAlignment="Bottom"/>
+
+        <TextBox HorizontalAlignment="Left" Height="23" Grid.Row="2" TextWrapping="Wrap" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="96" Margin="55,0,0,0"/>
+        <Label Grid.Row="4" Content="Views:" HorizontalAlignment="Left"  VerticalAlignment="Bottom"/>
+        <ListBox Grid.Row="5" Name="vwViews" HorizontalAlignment="Left" Height="148"  VerticalAlignment="Top" Width="181"/>
+
+        <StackPanel Grid.Column="1" Grid.RowSpan="8" >
+            <DataGrid AllowDrop="False"   CanUserAddRows="False" CanUserDeleteRows="False" ItemsSource="{Binding SelectedTab.Columns}" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="417" Width="690"/>
+            <Label Content="Refs:"/>
+            <DataGrid AllowDrop="False"   CanUserAddRows="False" CanUserDeleteRows="False" ItemsSource="{Binding SelectedTab.Refs}" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="126" Width="691"/>
+        </StackPanel>
+
+        <Grid Grid.RowSpan="6" Grid.Column="2"  >
+            <StackPanel Margin="3,0,-3,0">
+                <TextBox Text="{Binding NameSpace}" Width="180"></TextBox>
+                <TextBox Text="{Binding MaxDataLen}"></TextBox>
+
+                <Button x:Name="btnGen" Content="Generate Code" Width="150" Click="btnGen_Click"/>
+
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</Window>
