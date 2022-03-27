@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6ACC988F-EC35-4CAB-B79B-C6918EBE73B2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlowDesigner</RootNamespace>
+    <AssemblyName>FlowDesigner</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>FlowDesigner.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="CondisionSessionEdit.xaml.cs">
+      <DependentUpon>CondisionSessionEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForeachSessionEdit.xaml.cs">
+      <DependentUpon>ViewForeachSessionEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSaveServieEdit.xaml.cs">
+      <DependentUpon>ViewSaveServieEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCheckSessionEdit.xaml.cs">
+      <DependentUpon>ViewCheckSessionEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Flowchart\Model\FlowchartModel.cs" />
+    <Compile Include="Flowchart\Model\ActivityHelper.cs" />
+    <Compile Include="Flowchart\Model\MylLink.cs" />
+    <Compile Include="ViewNameEdit.xaml.cs">
+      <DependentUpon>ViewNameEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CollectionHelper.cs" />
+    <Compile Include="Flowchart\Controller.cs" />
+    <Compile Include="Flowchart\CustomLinkTool.cs" />
+    <Compile Include="Flowchart\CustomMoveResizeTool.cs" />
+    <Compile Include="Flowchart\DragDropTool.cs" />
+    <Compile Include="Flowchart\FlowchartEditor.xaml.cs">
+      <DependentUpon>FlowchartEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Flowchart\OrthogonalLink.cs" />
+    <Compile Include="ItemsControlDragHelper.cs" />
+    <Compile Include="NavigationBehaviorEdit.xaml.cs">
+      <DependentUpon>NavigationBehaviorEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesView.xaml.cs">
+      <DependentUpon>PropertiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AnesthesiaSys\AnesthesiaSys.Resources\AnesthesiaSys.Resources.csproj">
+      <Project>{ac539199-89b1-4249-80ec-bee218a0e480}</Project>
+      <Name>AnesthesiaSys.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AnesthesiaSys\AnesthesiaSys\Common\AnesthesiaSys.Infrastructure\AnesthesiaSys.Infrastructure.csproj">
+      <Project>{980bddff-1d71-4c11-82e0-f28f568cbe61}</Project>
+      <Name>AnesthesiaSys.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aga.Diagrams\Aga.Diagrams.csproj">
+      <Project>{988E94FB-0936-4B88-ACB9-4F9CE80C8AC3}</Project>
+      <Name>Aga.Diagrams</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy $(SolutionDir)AnesthesiaSys\$(OutDir)LastModule\*.*  $(TargetDir)LastModule\  /Y
+xcopy $(SolutionDir)AnesthesiaSys\$(OutDir)Data\*.*  $(TargetDir)Data\  /Y
+xcopy $(SolutionDir)AnesthesiaSys\$(OutDir)Services\*.*  $(TargetDir)Services\  /Y
+xcopy $(SolutionDir)AnesthesiaSys\$(OutDir)Modules\*.*  $(TargetDir)Modules\  /Y
+
+</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ReferencePath Include="E:\Projects\trunk\WorkflowDesigner\Aga.Diagrams\bin\x86\Debug\Aga.Diagrams.dll" />
+    <ReferencePath Include="E:\Projects\trunk\AnesthesiaSys\AnesthesiaSys\Common\AnesthesiaSys.Infrastructure\bin\x86\Debug\AnesthesiaSys.Infrastructure.dll" />
+    <ReferencePath Include="E:\Projects\trunk\AnesthesiaSys\AnesthesiaSys.Resources\bin\x86\Debug\AnesthesiaSys.Resources.dll" />
+    <ReferencePath Include="E:\Projects\trunk\AnesthesiaSys\AnesthesiaSys\depLIB\Prism\Desktop\Microsoft.Practices.Prism.dll" />
+    <ReferencePath Include="E:\Projects\trunk\AnesthesiaSys\AnesthesiaSys\depLIB\Prism\Desktop\Microsoft.Practices.Prism.Interactivity.dll" />
+    <ReferencePath Include="E:\Projects\trunk\AnesthesiaSys\AnesthesiaSys\depLIB\Prism\Desktop\Microsoft.Practices.Prism.MefExtensions.dll" />
+    <ReferencePath Include="E:\Projects\trunk\AnesthesiaSys\AnesthesiaSys\depLIB\Prism\Desktop\Microsoft.Practices.Prism.UnityExtensions.dll" />
+    <ReferencePath Include="E:\Projects\trunk\AnesthesiaSys\AnesthesiaSys\depLIB\Prism\Desktop\Microsoft.Practices.ServiceLocation.dll" />
+    <ReferencePath Include="E:\Projects\trunk\AnesthesiaSys\AnesthesiaSys\depLIB\Prism\Desktop\Microsoft.Practices.Unity.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\PresentationFramework.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.ComponentModel.Composition.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Runtime.Serialization.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.ServiceModel.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xaml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\UIAutomationProvider.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\WindowsBase.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="E:\Projects\trunk\WorkflowDesigner\FlowDesigner\obj\x86\Debug\CondisionSessionEdit.g.cs" />
+    <Compile Include="E:\Projects\trunk\WorkflowDesigner\FlowDesigner\obj\x86\Debug\ViewForeachSessionEdit.g.cs" />
+    <Compile Include="E:\Projects\trunk\WorkflowDesigner\FlowDesigner\obj\x86\Debug\ViewSaveServieEdit.g.cs" />
+    <Compile Include="E:\Projects\trunk\WorkflowDesigner\FlowDesigner\obj\x86\Debug\ViewCheckSessionEdit.g.cs" />
+    <Compile Include="E:\Projects\trunk\WorkflowDesigner\FlowDesigner\obj\x86\Debug\ViewNameEdit.g.cs" />
+    <Compile Include="E:\Projects\trunk\WorkflowDesigner\FlowDesigner\obj\x86\Debug\Flowchart\FlowchartEditor.g.cs" />
+    <Compile Include="E:\Projects\trunk\WorkflowDesigner\FlowDesigner\obj\x86\Debug\NavigationBehaviorEdit.g.cs" />
+    <Compile Include="E:\Projects\trunk\WorkflowDesigner\FlowDesigner\obj\x86\Debug\PropertiesView.g.cs" />
+    <Compile Include="E:\Projects\trunk\WorkflowDesigner\FlowDesigner\obj\x86\Debug\MainWindow.g.cs" />
+    <Compile Include="E:\Projects\trunk\WorkflowDesigner\FlowDesigner\obj\x86\Debug\App.g.cs" />
+    <Compile Include="E:\Projects\trunk\WorkflowDesigner\FlowDesigner\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" />
+  </ItemGroup>
+</Project>
