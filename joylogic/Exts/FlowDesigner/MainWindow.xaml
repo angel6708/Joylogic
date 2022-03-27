@@ -1,0 +1,99 @@
+﻿<Window x:Class="FlowDesigner.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:Aga.Diagrams.Controls;assembly=Aga.Diagrams" 
+	xmlns:local="clr-namespace:FlowDesigner" 
+    xmlns:d="clr-namespace:Aga.Diagrams;assembly=Aga.Diagrams"
+        xmlns:joy="clr-namespace:Core.Infrastructure.Workflow;assembly=Core.Infrastructure"
+    Title="WPF Diagrams" Width="800" Height="600">
+    <Window.Resources>
+        <ContextMenu x:Key="ContextMenu">
+            <MenuItem Click="Back" Header="返回"></MenuItem>
+            <MenuItem Tag="{x:Static joy:NodeKinds.View }" Click="AddActivity" Header="Add View"></MenuItem>
+            <MenuItem Tag="{x:Static joy:NodeKinds.CaseView }" Click="AddActivity" Header="Add CaseView"></MenuItem>
+            <MenuItem Tag="{x:Static joy:NodeKinds.Composed }" Click="AddActivity" Header="Add Composed"></MenuItem>
+            <MenuItem Tag="{x:Static joy:NodeKinds.Condition }" Click="AddActivity" Header="Add Condition"></MenuItem>
+            <MenuItem Tag="{x:Static joy:NodeKinds.Foreach }" Click="AddActivity" Header="Add Foreach"></MenuItem>
+            <MenuItem Tag="{x:Static joy:NodeKinds.Service }" Click="AddActivity" Header="Add Service"></MenuItem>
+            <MenuItem Tag="{x:Static joy:NodeKinds.SwitchCase }" Click="AddActivity" Header="Add SwitchCase"></MenuItem>
+            <MenuItem Tag="{x:Static joy:NodeKinds.Start }" Click="AddActivity" Header="Add Start"></MenuItem>
+            <MenuItem Tag="{x:Static joy:NodeKinds.End }" Click="AddActivity" Header="Add End"></MenuItem>
+        </ContextMenu>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem  Margin="10,5"  Header="文件" >
+                <MenuItem   Click="LoadAssembly" Header="加载Assembly"></MenuItem>
+                <MenuItem   Click="Open" Header="打开"></MenuItem>
+                <MenuItem Click="Save" Header="保存"></MenuItem>
+                <MenuItem Click="SaveAs" Header="另存"></MenuItem>
+
+            </MenuItem>
+
+        </Menu>
+        <!--<f:FlowchartEditor Grid.Row="1" />-->
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="360"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <StackPanel HorizontalAlignment="Stretch"  Margin="0,10,10,0">
+
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="ddd" Text="名称:"></TextBlock>
+                            <TextBox IsReadOnly="True" Width="300" x:Name="activityname"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                    <StackPanel Margin="0,5,0,0">
+                        <Grid Visibility="Collapsed" >
+                            <TextBlock VerticalAlignment="Center" Text="Activitys:" Margin="0,0,0,3"/>
+                            <Button  HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="50" Margin="10,0">Hide</Button>
+                        </Grid>
+                        <Border Visibility="Collapsed" x:Name="activityBorder" BorderBrush="Black" BorderThickness="1">
+                            <ItemsControl x:Name="_toolbox">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </Border>
+                    </StackPanel>
+
+                    <StackPanel  Margin="0,0,0,5">
+                        <TextBlock Text="Properties:" Margin="0,0,0,5"/>
+                        <local:PropertiesView x:Name="_propertiesView" />
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+            <Grid Grid.Column="2">
+                <Border BorderBrush="Black" BorderThickness="1">
+                    <d:DiagramScrollView>
+                        <d:DiagramView  ContextMenu="{StaticResource ContextMenu}" Name="_editor" AllowDrop="True"
+							   ShowGrid="True"  Zoom="{Binding ElementName=_zoom, Path=Value}" GridCellSize="20,20" DocumentSize="2000,2000">
+                           
+                        </d:DiagramView>
+                    </d:DiagramScrollView>
+                </Border>
+                <Slider Width="300" x:Name="_zoom" Minimum="0.1" Margin="20" Maximum="10" Value="1"  HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+            </Grid>
+
+        </Grid>
+
+
+
+    </Grid>
+
+</Window>
