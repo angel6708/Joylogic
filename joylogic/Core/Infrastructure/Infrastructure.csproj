@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91C31097-68C8-4521-B437-375734AA6628}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core.Infrastructure</RootNamespace>
+    <AssemblyName>Core.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MouseKeyboardLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MouseKeyboardLibrary.1.0.1.0\lib\net35\MouseKeyboardLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=5.11.6.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.Abstractions.5.11.6\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.10.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.Container.5.11.10\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Consts\RegionNames.cs" />
+    <Compile Include="Controls\BaseView.cs" />
+    <Compile Include="Controls\DatePickerControl.xaml.cs">
+      <DependentUpon>DatePickerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DateInputControl.xaml.cs">
+      <DependentUpon>DateInputControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IBaseView.cs" />
+    <Compile Include="Controls\ICaseView.cs" />
+    <Compile Include="Controls\IconTextDelegateCommand.cs" />
+    <Compile Include="Controls\INavigationPanelItem.cs" />
+    <Compile Include="Controls\KeyboardControl.xaml.cs">
+      <DependentUpon>KeyboardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavigationPanel.cs" />
+    <Compile Include="Controls\NavigationPanelRegionAdapter.cs" />
+    <Compile Include="Controls\NumberInputControl.xaml.cs">
+      <DependentUpon>NumberInputControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SelectButton.cs" />
+    <Compile Include="Controls\ToolBarButton.cs" />
+    <Compile Include="Events\Core\DisposeEvent.cs" />
+    <Compile Include="Events\Core\OperationEventArgs.cs" />
+    <Compile Include="Events\Core\ShowHeaderRegionEvent.cs" />
+    <Compile Include="Events\Core\LoginEvents.cs" />
+    <Compile Include="Events\Core\MainRegionNavigateEvent.cs" />
+    <Compile Include="Events\Core\MainRegionNavigateEventArgs.cs" />
+    <Compile Include="Events\Core\SearchEvent.cs" />
+    <Compile Include="Events\Core\ShowLoadingEvent.cs" />
+    <Compile Include="Events\Core\ShowLoadingEventArg.cs" />
+    <Compile Include="Events\Core\ShowMessageEvent.cs" />
+    <Compile Include="Events\Core\ShowMessageEventArg.cs" />
+    <Compile Include="Events\Core\ToolBarCommandChangedEvent.cs" />
+    <Compile Include="Logging\Log4NetLoggerAdaptor.cs" />
+    <Compile Include="Models\AutoDisposeBase.cs" />
+    <Compile Include="ModuleLoader\AggregateModuleCatalog.cs" />
+    <Compile Include="ModuleLoader\BaseModule.cs" />
+    <Compile Include="ModuleLoader\CallbackLogger.cs" />
+    <Compile Include="ModuleLoader\DiscoveryMethod.cs" />
+    <Compile Include="ModuleLoader\DownloadTiming.cs" />
+    <Compile Include="ModuleLoader\GlobalSuppressions.cs" />
+    <Compile Include="ModuleLoader\IModuleLifeServiceSupport.cs" />
+    <Compile Include="ModuleLoader\IModuleTracker.cs" />
+    <Compile Include="ModuleLoader\ModuleInitializationStatus.cs" />
+    <Compile Include="ModuleLoader\ModuleLifeService.cs" />
+    <Compile Include="ModuleLoader\ModuleTracker.cs" />
+    <Compile Include="ModuleLoader\ModuleTrackingState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ContainerService.cs" />
+    <Compile Include="Services\ContainerService.ext.cs" />
+    <Compile Include="Services\CurrentContextSessionService.cs" />
+    <Compile Include="Services\SysNavigationService.cs" />
+    <Compile Include="Utils\ISerializer.cs" />
+    <Compile Include="Utils\MyDataContractSerializer.cs" />
+    <Compile Include="Utils\SerializerFactory.cs" />
+    <Compile Include="Utils\TaskInfo.cs" />
+    <Compile Include="Utils\TaskQueueHandler.cs" />
+    <Compile Include="Utils\UIDispatcher.cs" />
+    <Compile Include="ViewModels\BaseCaseViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="Workflow\Activity.cs" />
+    <Compile Include="Workflow\ActivityEventHandler.cs" />
+    <Compile Include="Workflow\ActivityGlobalConfig.cs" />
+    <Compile Include="Workflow\ActivityLoader.cs" />
+    <Compile Include="Workflow\CaseflowActivity.cs" />
+    <Compile Include="Workflow\ForeachInfo.cs" />
+    <Compile Include="Workflow\ForeachInfoStack.cs" />
+    <Compile Include="Workflow\ICaseSession.cs" />
+    <Compile Include="Workflow\IConditionSession.cs" />
+    <Compile Include="Workflow\IForeachSession.cs" />
+    <Compile Include="Workflow\Intent.cs" />
+    <Compile Include="Workflow\ComposedActivity.cs" />
+    <Compile Include="Workflow\ConditionActivity.cs" />
+    <Compile Include="Workflow\EndActivity.cs" />
+    <Compile Include="Workflow\ForeachActivity.cs" />
+    <Compile Include="Workflow\ForeachEnumerator.cs" />
+    <Compile Include="Workflow\ISaveService.cs" />
+    <Compile Include="Workflow\IViewCheckSession.cs" />
+    <Compile Include="Workflow\Link.cs" />
+    <Compile Include="Workflow\SaveServiceActivity.cs" />
+    <Compile Include="Workflow\StartActivity.cs" />
+    <Compile Include="Workflow\CaseViewActivity.cs" />
+    <Compile Include="Workflow\ViewActivity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="packages.config" />
+    <None Include="PostBuildScripts\BuildNewPackage-RanAutomatically.ps1" />
+    <None Include="PostBuildScripts\New-NuGetPackage.ps1" />
+    <None Include="PostBuildScripts\UploadPackage-RunManually.bat" />
+    <None Include="PostBuildScripts\UploadPackage-RunManually.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\DatePickerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DateInputControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\KeyboardControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\NumberInputControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sessions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Exts\Prism\Prism.Core\Prism.Core.csproj">
+      <Project>{048c6382-60e0-4f20-bbbd-b1bd5781d65a}</Project>
+      <Name>Prism.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Exts\Prism\Wpf\Prism.Unity.Wpf\Prism.Unity.Wpf.csproj">
+      <Project>{c617bf8d-c23c-445f-91f3-c4d5700387cb}</Project>
+      <Name>Prism.Unity.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Exts\Prism\Wpf\Prism.Wpf\Prism.Wpf.csproj">
+      <Project>{c996c42b-2d36-4350-9300-0233bccba119}</Project>
+      <Name>Prism.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.Access.Interface\Data.Access.Interface.csproj">
+      <Project>{7e1d4a18-758a-43ec-aa28-badf79d1c004}</Project>
+      <Name>Data.Access.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.Models\Data.Models.csproj">
+      <Project>{81afd730-8109-4dfa-955f-f0693c2b2a01}</Project>
+      <Name>Data.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PostBuildScripts\NuGet.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

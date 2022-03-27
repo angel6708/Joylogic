@@ -1,0 +1,250 @@
+﻿<UserControl x:Class="Core.Infrastructure.Controls.NumberInputControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Core.Infrastructure.Controls"
+             xmlns:winform="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" 
+             Width="231" Height="231"
+             >
+
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#595858"></Setter>
+        </Style>
+        <Style x:Key="MyFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Control}">
+                        <Grid Margin="4 2">
+                            <Rectangle Name="r1" StrokeThickness="1" Stroke="Black" StrokeDashArray="2 2"/>
+                            <Border Name="border" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualHeight}"  CornerRadius="2" BorderThickness="1" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <Style x:Key="ShadowStyle">
+            <Setter Property="Control.Foreground" Value="#f1f1f3" />
+        </Style>
+        <Style x:Key="InformButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Foreground" Value="#595858"></Setter>
+            <Setter Property="FontSize" Value="15px"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}" />
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <!--<LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                        <GradientStop Color="#FF000000" Offset="0.2"/>
+                        <GradientStop Color="#FF303030" Offset="0.85"/>
+                        <GradientStop Color="#FF707070" Offset="1"/>
+                    </LinearGradientBrush>-->
+                    <SolidColorBrush Color="#f1f1f3"></SolidColorBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+				BorderThickness="0"
+				Padding="4,2"  
+				CornerRadius="4" 
+				Background="{TemplateBinding Background}">
+                            <Grid >
+                                <ContentPresenter HorizontalAlignment="Left"  
+	                           VerticalAlignment="Center"  Name="contentShadow" 
+					Style="{StaticResource ShadowStyle}">
+
+                                </ContentPresenter>
+                                <ContentPresenter HorizontalAlignment="Left"  
+                            VerticalAlignment="Center" Name="content"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" >
+                                    <Setter.Value>
+
+                                        <SolidColorBrush Color="#fff1f3"></SolidColorBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+
+                                <Setter TargetName="content" Property="RenderTransform" >
+                                    <Setter.Value>
+                                        <TranslateTransform Y="1.0" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsDefault" Value="True">
+                                <Setter Property="Background" Value="#fde887"></Setter>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Border  
+                            CornerRadius="10" 
+                            Focusable="False">
+            <Border BorderBrush="#878787" Background="#878787" Padding="10,10,0,0" BorderThickness="0" CornerRadius="10">
+
+
+                <StackPanel Orientation="Vertical">
+
+                            <StackPanel Orientation="Horizontal" >
+ 
+                                <Button 
+                                     Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.D1}"
+                                    Style="{StaticResource InformButton}" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="50" Height="50">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"   >1</TextBlock>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Style="{StaticResource InformButton}" 
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.D2}"
+                                        VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="50" Height="50">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"   >2</TextBlock>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Style="{StaticResource InformButton}" 
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.D3}"
+                                        VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="50" Height="50">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"   >3</TextBlock>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Style="{StaticResource InformButton}"  
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.D0}"
+                                        VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="50" Height="50">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"   >0</TextBlock>
+                                    </StackPanel>
+                                </Button>
+
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" >
+                                <Button Style="{StaticResource InformButton}" 
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.D4}"
+                                        VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="50" Height="50">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"   >4</TextBlock>
+                                    </StackPanel>
+                                </Button>
+                                <Button Style="{StaticResource InformButton}" 
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.D5}"
+                                        VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="50" Height="50">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"   >5</TextBlock>
+                                    </StackPanel>
+                                </Button>
+                                <Button Style="{StaticResource InformButton}" 
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.D6}"
+                                        VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="50" Height="50">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"   >6</TextBlock>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Style="{StaticResource InformButton}"  
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.Space}"
+                                        VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="50" Height="50">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                        
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"   >00</TextBlock>
+                                    </StackPanel>
+                                </Button>
+
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" >
+                                <Button Style="{StaticResource InformButton}" 
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.D7}"
+                                        VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="50" Height="50">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"   >7</TextBlock>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Style="{StaticResource InformButton}"
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.D8}"
+                                        VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="50" Height="50">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"   >8</TextBlock>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Style="{StaticResource InformButton}" 
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.D9}"
+                                        VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="50" Height="50">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"   >9</TextBlock>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Style="{StaticResource InformButton}" 
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.OemPeriod}"
+                                        VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="50" Height="50">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom"   >.</TextBlock>
+                                    </StackPanel>
+                                </Button>
+
+
+
+                            </StackPanel>
+                         
+                            <StackPanel Orientation="Horizontal" >
+
+                                <Button Style="{StaticResource InformButton}" Focusable="True" 
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.PrintScreen}"
+                                        VerticalContentAlignment="Top" HorizontalContentAlignment="Left"  Width="104" Height="50">
+                                    <TextBlock>完成</TextBlock>
+                                </Button>
+
+                                <Button Style="{StaticResource InformButton}" 
+                                         Command="{Binding KeyCommand, RelativeSource= {RelativeSource AncestorType=local:NumberInputControl}}" 
+                                        CommandParameter="{x:Static winform:Keys.Back}"
+                                        VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Width="104" Height="50">
+                                    <TextBlock>退格</TextBlock>
+                                </Button>
+
+
+
+                            </StackPanel>
+                        
+
+                        </StackPanel>
+                    </Border>
+
+                </Border> 
+    </Grid>
+</UserControl>
